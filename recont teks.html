@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Experience</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Julee&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      background: linear-gradient(135deg,#000000,#021526,#03346E,#000814);
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .title-font{
+      font-family: 'Julee', cursive;
+    }
+
+    .glass{
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+    }
+
+    .photo-box{
+      position: relative;
+      overflow: hidden;
+      transition: 0.5s ease;
+    }
+
+    .photo-box:hover{
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .photo-box::before{
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50%;
+      top: -120px;
+      right: -100px;
+      filter: blur(20px);
+    }
+
+    .photo{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .floating{
+      animation: floating 4s ease-in-out infinite;
+    }
+
+    @keyframes floating{
+      0%{
+        transform: translateY(0px);
+      }
+
+      50%{
+        transform: translateY(-10px);
+      }
+
+      100%{
+        transform: translateY(0px);
+      }
+    }
+
+    .fade{
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    @keyframes fadeUp{
+      to{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .glow{
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(140px);
+      z-index: -1;
+      opacity: 0.18;
+    }
+
+    .glow1{
+      background: #00aaff;
+      top: 0;
+      left: 0;
+    }
+
+    .glow2{
+      background: #0047ff;
+      bottom: 0;
+      right: 0;
+    }
+
+  </style>
+</head>
+
+<body class="flex items-center justify-center px-6 py-16 relative">
+
+  <!-- GLOW -->
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+
+  <!-- MAIN -->
+  <section class="max-w-7xl w-full glass rounded-[40px] p-8 md:p-12">
+
+    <!-- TITLE -->
+    <div class="text-center mb-14 floating">
+      <h1 class="title-font text-6xl md:text-8xl text-blue-300">
+        My Experience
+      </h1>
+
+      <p class="text-gray-300 mt-4 text-lg">
+        My learning journey using Figma and digital design.
+      </p>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+      <!-- LEFT -->
+      <div class="photo-box glass rounded-[35px] p-5 fade">
+
+        <img 
+          src="b1.jpg"
+          alt="devita"
+          class="photo rounded-[25px]"
+        >
+
+        <div class="glass rounded-2xl p-5 mt-6">
+          <h2 class="text-3xl font-bold text-white mb-3">
+            devita
+          </h2>
+
+          <p class="text-gray-300 leading-relaxed">
+            “Design is not just appearance, it is how everything works.”
+          </p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="glass rounded-[35px] p-8 fade">
+
+        <div class="space-y-6 text-gray-200 leading-8 text-lg">
+
+          <p>
+            Last week, I had a collaborative assignment that utilized Figma. I felt enthusiastic since it was my first time exploring the platform independently for a project.
+          </p>
+
+          <p>
+            However, the initial excitement quickly turned into frustration when I encountered a major technical issue.
+          </p>
+
+          <p>
+            Every time I attempted to rearrange my layout, I found it incredibly difficult to move the elements across the canvas.
+          </p>
+
+          <p>
+            Objects either remained completely frozen in place, or dragging them unexpectedly distorted the entire group of surrounding components.
+          </p>
+
+          <p>
+            To resolve this issue, I paused my work and began troubleshooting the interface settings.
+          </p>
+
+          <p>
+            I discovered that the root of the problem was twofold: some critical layers were accidentally locked in the sidebar, and I was unknowingly using the wrong selection tool.
+          </p>
+
+          <p>
+            I fixed the issue by pressing the V key to activate the standard Move Tool and systematically clicking the padlock icons to unlock my layers.
+          </p>
+
+          <p>
+            This experience taught me that mastering fundamental canvas navigation and layer management is essential before diving into any complex digital design project.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
